@@ -6,56 +6,42 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[600],
       appBar: AppBar(
         backgroundColor: Colors.grey[800],
         title: const Text(
           //'GirlScript Summer of Code $days $s',
-          "Home Page",
+          "Welcome Home ",
           style: TextStyle(color: Colors.white),
         ),
         shadowColor: Colors.black,
       ),
       drawer: const Drawer(),
-      // body: Column(
-      //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      //   crossAxisAlignment: CrossAxisAlignment.center,
-      //   //children: <Widget>[Image.asset("assets/images/home.png")],
-      //   children: <Widget>[
-      //     Container(
-      //       height: 120.0,
-      //       width: 120.0,
-      //       decoration: const BoxDecoration(
-      //         image: DecorationImage(
-      //           image: AssetImage('assets/images/home.png'),
-      //           fit: BoxFit.fill,
-      //         ),
-      //         shape: BoxShape.circle,
-      //       ),
-      //     ),
-      //   ],
-      // ),
       body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pushNamed(context, '/login');
-          },
-          child: const Text('Login Page'),
+        child: Material(
+          elevation: 8,
+          shape: CircleBorder(),
+          clipBehavior: Clip.antiAliasWithSaveLayer,
+          child: InkWell(
+            splashColor: Colors.black26,
+            onTap: () {
+              Navigator.pushNamed(context, '/login');
+            },
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.transparent,
+                border: Border.all(color: Colors.black, width: 3),
+                shape: BoxShape.circle,
+              ),
+              child: Ink.image(
+                image: const AssetImage("assets/images/login.png"),
+                height: 85,
+                width: 85,
+              ),
+            ),
+          ),
         ),
       ),
     );
   }
 }
-// return Scaffold(
-//       appBar: AppBar(
-//         title: const Text('First Screen'),
-//       ),
-//       body: Center(
-//         child: ElevatedButton(
-//           onPressed: () {
-//             // Navigate to the second screen when tapped.
-//             Navigator.pushNamed(context, '/login');
-//           },
-//           child: const Text('Launch screen'),
-//         ),
-//       ),
-//     );
