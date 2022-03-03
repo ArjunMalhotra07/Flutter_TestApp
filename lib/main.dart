@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_catalog/pages/home_page.dart';
 import 'package:flutter_catalog/pages/loginPage.dart';
+//import 'package:email_validator/email_validator.dart';
 
 void main() => runApp(MaterialApp(
       home: MyApp(),
