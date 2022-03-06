@@ -23,43 +23,12 @@ class HomePage extends StatelessWidget {
         clipBehavior: Clip.antiAliasWithSaveLayer,
         child: Column(
           children: <Widget>[
-            InkWell(
-              splashColor: Colors.black26,
-              onTap: () {
-                Navigator.pushNamed(context, '/login');
-              },
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.transparent,
-                  border: Border.all(color: Colors.black, width: 3),
-                  shape: BoxShape.circle,
-                ),
-                child: Ink.image(
-                  image: const AssetImage("assets/images/login.png"),
-                  height: 85,
-                  width: 85,
-                ),
-              ),
+            Image.asset(
+              "assets/images/login.png",
+              height: 300,
+              fit: BoxFit.cover,
             ),
             const SizedBox(height: 25),
-            Padding(
-              padding:
-                  const EdgeInsets.symmetric(vertical: 16.0, horizontal: 32.0),
-              child: Column(
-                children: [
-                  TextFormField(
-                    decoration: const InputDecoration(
-                        hintText: "Enter User Name", labelText: "User Name"),
-                  ),
-                  const SizedBox(height: 25),
-                  TextFormField(
-                    obscureText: true,
-                    decoration: const InputDecoration(
-                        hintText: "Enter Password", labelText: "Password"),
-                  ),
-                ],
-              ),
-            ),
           ],
         ),
       ),
